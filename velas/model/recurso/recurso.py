@@ -3,11 +3,11 @@ class Recurso(object):
     """
     Este recurso se refiere a los recursos fisicos habilitados para su uso
     """
-    def __init__(self, nombre : str, precio : float) -> None:
+    def __init__(self, nombre : str, precio : float, cantidad:float) -> None:
         self.nombre = nombre
         self.precio = precio
         self.distribuidor = ""
-        self.cantidad = 0
+        self.cantidad = cantidad
     
     def setDistribuidor(self, dist : str) -> None: self.distribuidor = dist
     
@@ -19,3 +19,6 @@ class Recurso(object):
 
     def guardar(self):
         print("Programar guardado")
+        print(self.nombre)
+        print(self.precio)
+        print(self.cantidad)
