@@ -8,7 +8,7 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
 
-
         self.actionCrear_recurso.triggered.connect(lambda : self.stackedWidget.setCurrentWidget(self.newRecurso))
 
-        self.pushButton.clicked.connect(lambda : self.stackedWidget.setCurrentWidget(self.Inicial))
+        self.button_newRecurso.clicked.connect(lambda : self.stackedWidget.setCurrentWidget(self.Inicial))
+
