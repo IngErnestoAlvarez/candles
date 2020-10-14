@@ -17,4 +17,5 @@ class Recurso(object):
 
     def setStock(self, cantidad:int) -> None: self.cantidad = cantidad
 
-    
+    def guardar(self):
+        print("Programar guardado")

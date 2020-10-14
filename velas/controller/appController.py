@@ -1,5 +1,6 @@
 from PyQt5 import QtWidgets
 from velas.view.startingWindow import StartingWindow
+from velas.model.recurso.recurso import Recurso
 
 class AppController(object):
 
@@ -11,6 +12,13 @@ class AppController(object):
 
     def showInicio(self):
         self.window = StartingWindow()
+        self.cargarSignals()
         self.window.show()
         self.app.exec_()
-    
+
+    def cargarSignals(self):
+        self.window.signal_newRecurso.connect(self.newRecurso)
+
+    def newRecurso(self, nombre:str, precio:float) -> None:
+        rec = Recurso(nombre, precio)
+        rec.guardar()
