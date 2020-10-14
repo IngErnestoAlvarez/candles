@@ -14,6 +14,7 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
 
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
 
+    
     def fnewRecurso(self):
         self.signal_newRecurso.emit(self.lineEdit_nombre_newRecurso.text(), 1.0)
         self.lineEdit_nombre_newRecurso.clear()
