@@ -1,0 +1,97 @@
+/*
+ * This theme was made using Albert theme creator (https://albertlauncher.github.io/docs/theming/themecreator/).
+ *
+ * Check http://doc.qt.io/qt-5/stylesheet-syntax.html especially the subtopics:
+ * The Style Sheet Syntax (http://doc.qt.io/qt-5/stylesheet-syntax.html)
+ * Qt Style Sheets Reference (http://doc.qt.io/qt-5/stylesheet-reference.html)
+ */
+* {
+  border: none;
+  color : #808080;
+  background-color: #2c2a21;
+}
+
+/********** QMenu **************/
+QMenu::item:selected{
+  background-color: #4f492e;
+}
+
+#frame {
+  padding: 6px;
+  border-radius: 12px;
+  background-color: #2c2a21;
+  border: 7px solid #808080;
+  min-width: 640px;
+  max-width: 640px;
+}
+
+#inputLine {
+  padding: 2px;
+  border-radius: 2px;
+  font-size: 25px;
+  selection-color: #FFFFFF;
+  selection-background-color: #808080;
+  background-color: #D0D0D0;
+  color: #808080
+}
+
+#settingsButton {
+  color: #5c5c5c;
+  background-color: #2c2a21;
+  padding: 4px;
+  margin: 6px 6px 0px 0px;
+  border-top-right-radius: 6px;
+  border-bottom-left-radius: 10px;
+  min-width:13px;
+  min-height:13px;
+  max-width:13px;
+  max-height:13px;
+}
+
+/********** ListViews **********/
+QListView QScrollBar:vertical  {
+  width: 5px;
+  background: transparent;
+}
+
+QListView QScrollBar::handle:vertical  {
+  background: #808080;
+  min-height: 24px;
+}
+
+QListView QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical,
+QListView QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical,
+QListView QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+  border: 0px;
+  width: 0px;
+  height: 0px;
+  background: transparent;
+}
+
+/********** actionList **********/
+QListView#actionList {
+  font-size: 20px;
+}
+
+QListView#actionList::item{
+  height: 28px;
+}
+
+QListView#actionList::item::selected{
+  background: qlineargradient(x1:0, x2:1, stop:0.0 #40808080, stop:0.5 #20808080, stop:1.0 #40808080 );
+}
+
+/********** resultsList **********/
+QListView#resultsList {
+  icon-size: 40px;
+  font-size: 26px;
+  color: #808080;
+}
+
+QListView#resultsList::item{
+  height: 48px;
+}
+
+QListView#resultsList::item::selected{
+  background: qlineargradient(x1:0, x2:1, stop:0.0 #40808080, stop:0.5 #20808080, stop:1.0 #40808080 );
+}
