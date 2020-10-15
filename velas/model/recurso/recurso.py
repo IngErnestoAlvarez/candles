@@ -1,4 +1,5 @@
 import pickle
+import os.path as path
 
 class Recurso(object):
     """
@@ -19,9 +20,10 @@ class Recurso(object):
     def setStock(self, cantidad:int) -> None: self.cantidad = cantidad
 
     def guardar(self) -> None:
-        if self.exists(): return 
+        if self.exists(): return
         with open(r"resources\data\recursos\\"+self.nombre.lower()+".dat", "wb") as f:
             pickle.dump(self, f)
     
+    #! Chequear
     def exists(self) -> bool:
-        pass
+        return path.exists(r"resources/data/"+self.nombre.lower()+".dat")
