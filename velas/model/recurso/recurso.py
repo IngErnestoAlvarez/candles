@@ -1,3 +1,4 @@
+import pickle
 
 class Recurso(object):
     """
@@ -17,8 +18,10 @@ class Recurso(object):
 
     def setStock(self, cantidad:int) -> None: self.cantidad = cantidad
 
-    def guardar(self):
-        print("Programar guardado")
-        print(self.nombre)
-        print(self.precio)
-        print(self.cantidad)
+    def guardar(self) -> None:
+        if self.exists(): return 
+        with open(r"resources\data\recursos\\"+self.nombre.lower()+".dat", "wb") as f:
+            pickle.dump(self, f)
+    
+    def exists(self) -> bool:
+        pass
