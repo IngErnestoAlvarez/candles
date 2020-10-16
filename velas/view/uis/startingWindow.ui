@@ -88,21 +88,7 @@
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
-          <widget class="QWidget" name="verticalLayoutWidget">
-           <property name="geometry">
-            <rect>
-             <x>20</x>
-             <y>120</y>
-             <width>201</width>
-             <height>231</height>
-            </rect>
-           </property>
-           <layout class="QVBoxLayout" name="layout_recurso_inicio">
-            <property name="sizeConstraint">
-             <enum>QLayout::SetMaximumSize</enum>
-            </property>
-           </layout>
-          </widget>
+          <layout class="QVBoxLayout" name="verticalLayout_2"/>
          </widget>
         </item>
        </layout>

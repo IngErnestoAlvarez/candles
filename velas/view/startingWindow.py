@@ -1,3 +1,4 @@
+from velas.view.recursoWidget import WidgetRecurso
 from PyQt5 import QtCore, QtGui, QtWidgets
 from velas.view.uis.uistartingWindow import *
 
@@ -10,7 +11,13 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
 
-        self.widget_recurso_inicio.setLayout(self.layout_recurso_inicio)
+
+        #Testing######
+        self.primerRecurso = WidgetRecurso()
+        self.widget_recurso_inicio.layout().addWidget(self.primerRecurso)
+        self.widget_recurso_inicio.layout().addStretch()
+
+        #############
 
         self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
