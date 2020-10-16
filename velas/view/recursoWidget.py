@@ -19,6 +19,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.nombre.setMaximumWidth(100)
         self.layout.addWidget(self.nombre)
 
+        # BOTON DE ELIMINADO
         self.buttonDelete = QtWidgets.QPushButton()
         buttonIcon = QIcon(r"resources\imagenes\basura.png")
         self.buttonDelete.setIcon(buttonIcon)
@@ -41,6 +42,13 @@ class WidgetRecurso(QtWidgets.QWidget):
         msg.setInformativeText("Se elminará todo registro de él, incluyendo cantidades y precios.")
         msg.setWindowTitle("Eliminar recurso")
         msg.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
-        
+        msg.buttonClicked.connect(self.eliminar)
 
         msg.exec_()
+    
+    def eliminar(self, button):
+        if button.text() == "Cancel": return
+
+        self.rec.eliminar()
+        self.parent().layout().removeWidget(self)
+        self.parent().layout().update()

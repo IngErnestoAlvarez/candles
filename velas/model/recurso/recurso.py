@@ -31,6 +31,8 @@ class Recurso(object):
     def exists(self) -> bool:
         return path.exists(r"resources/data/"+self.nombre.lower()+".dat")
     
+    def eliminar(self) -> None:
+        pathlib.Path(r"resources\data\recursos\\"+self.nombre.lower()+".dat").unlink(missing_ok=True)
 
 @dispatch(str)
 def cargar(nombre:str) -> Recurso:

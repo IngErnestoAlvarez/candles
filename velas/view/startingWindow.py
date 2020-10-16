@@ -18,9 +18,12 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
             self.widget_recurso_inicio.layout().addWidget(recursoAux)
         self.widget_recurso_inicio.layout().setAlignment(QtCore.Qt.AlignTop)
 
+        self.logica()
+
+
+    def logica(self):
         self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
-
 
     def factionNewRecurso(self):
         self.stackedWidget.setCurrentWidget(self.newRecurso)
