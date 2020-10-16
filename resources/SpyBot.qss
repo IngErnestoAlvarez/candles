@@ -12,6 +12,11 @@
   font: 16px 'Cambria';
 }
 
+QWidget[accessibleName="widgetInicio"]{
+  background-color: #7d7764;
+  border-radius: 6px;
+}
+
 /********** QMenu **************/
 QMenu::item{
   background-color: #AD995F;

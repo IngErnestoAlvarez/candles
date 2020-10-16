@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '.\velas\view\uis\startingWindow.ui'
+# Form implementation generated from reading ui file 'velas\view\uis\startingWindow.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.1
 #
@@ -26,6 +26,38 @@ class Ui_StartingWindow(object):
         self.stackedWidget.setObjectName("stackedWidget")
         self.Inicial = QtWidgets.QWidget()
         self.Inicial.setObjectName("Inicial")
+        self.gridLayout = QtWidgets.QGridLayout(self.Inicial)
+        self.gridLayout.setObjectName("gridLayout")
+        self.widget_2 = QtWidgets.QWidget(self.Inicial)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_2.sizePolicy().hasHeightForWidth())
+        self.widget_2.setSizePolicy(sizePolicy)
+        self.widget_2.setMinimumSize(QtCore.QSize(550, 600))
+        self.widget_2.setMaximumSize(QtCore.QSize(550, 600))
+        self.widget_2.setAccessibleName("widgetInicio")
+        self.widget_2.setObjectName("widget_2")
+        self.gridLayout.addWidget(self.widget_2, 0, 1, 1, 1)
+        self.widget_recurso_inicio = QtWidgets.QWidget(self.Inicial)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.widget_recurso_inicio.sizePolicy().hasHeightForWidth())
+        self.widget_recurso_inicio.setSizePolicy(sizePolicy)
+        self.widget_recurso_inicio.setMinimumSize(QtCore.QSize(250, 600))
+        self.widget_recurso_inicio.setMaximumSize(QtCore.QSize(250, 600))
+        self.widget_recurso_inicio.setAccessibleName("widgetInicio")
+        self.widget_recurso_inicio.setAutoFillBackground(False)
+        self.widget_recurso_inicio.setObjectName("widget_recurso_inicio")
+        self.verticalLayoutWidget = QtWidgets.QWidget(self.widget_recurso_inicio)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 120, 201, 231))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.layout_recurso_inicio = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.layout_recurso_inicio.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
+        self.layout_recurso_inicio.setContentsMargins(0, 0, 0, 0)
+        self.layout_recurso_inicio.setObjectName("layout_recurso_inicio")
+        self.gridLayout.addWidget(self.widget_recurso_inicio, 0, 0, 1, 1)
         self.stackedWidget.addWidget(self.Inicial)
         self.newRecurso = QtWidgets.QWidget()
         self.newRecurso.setObjectName("newRecurso")

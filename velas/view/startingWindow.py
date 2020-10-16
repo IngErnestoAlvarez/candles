@@ -10,8 +10,9 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
         QtWidgets.QMainWindow.__init__(self, *args, **kwargs)
         self.setupUi(self)
 
-        self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
+        self.widget_recurso_inicio.setLayout(self.layout_recurso_inicio)
 
+        self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
 
     def factionNewRecurso(self):
@@ -21,4 +22,6 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
     def fnewRecurso(self):
         self.signal_newRecurso.emit(self.lineEdit_nombre_newRecurso.text(), float(self.lineEdit_precio_newRecurso.text()), float(self.lineEdit_cantidad_newRecurso.text()))
         self.lineEdit_nombre_newRecurso.clear()
+        self.lineEdit_cantidad_newRecurso.clear()
+        self.lineEdit_precio_newRecurso.clear()
         self.stackedWidget.setCurrentWidget(self.Inicial)

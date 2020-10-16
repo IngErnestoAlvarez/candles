@@ -1,5 +1,7 @@
 import pickle
 import os.path as path
+from typing import List
+from multipledispatch import dispatch
 
 class Recurso(object):
     """
@@ -27,3 +29,13 @@ class Recurso(object):
     #! Chequear
     def exists(self) -> bool:
         return path.exists(r"resources/data/"+self.nombre.lower()+".dat")
+    
+
+@dispatch(str)
+def cargar(nombre:str) -> Recurso:
+    print("Hola")
+    return Recurso("Hola", 10, 10)
+
+@dispatch()
+def cargar() -> List[Recurso]:
+    print("Chau")
