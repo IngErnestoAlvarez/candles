@@ -49,6 +49,12 @@ QLabel{
   color: #FFFFFF;
 }
 
+QLabel[accessibleName="widgetRecursoInicio"]{
+  background-color: transparent;
+  font: 20px;
+  color: #FFFFFF;
+}
+
 /********** QButton **************/
 QPushButton{
   background-color: #AD995F;
@@ -58,6 +64,13 @@ QPushButton{
   color: #FFFFFF;
 }
 
+QPushButton[accessibleName="botonBasura"]{
+  background-color: transparent;
+}
+
+QPushButton#botonEmergencia {
+  font: 10px;
+}
 #frame {
   padding: 6px;
   border-radius: 12px;

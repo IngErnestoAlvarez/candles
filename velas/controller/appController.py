@@ -19,6 +19,5 @@ class AppController(object):
     def cargarSignals(self):
         self.window.signal_newRecurso.connect(self.newRecurso)
 
-    def newRecurso(self, nombre:str, precio:float, cantidad:float) -> None:
-        rec = Recurso(nombre, precio, cantidad)
-        rec.guardar()
+    def newRecurso(self,recurso:Recurso) -> None:
+        recurso.guardar()

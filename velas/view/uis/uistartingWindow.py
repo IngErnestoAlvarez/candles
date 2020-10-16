@@ -52,7 +52,7 @@ class Ui_StartingWindow(object):
         self.widget_recurso_inicio.setObjectName("widget_recurso_inicio")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget_recurso_inicio)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.gridLayout.addWidget(self.widget_recurso_inicio, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.widget_recurso_inicio, 0, 0, 1, 1, QtCore.Qt.AlignTop)
         self.stackedWidget.addWidget(self.Inicial)
         self.newRecurso = QtWidgets.QWidget()
         self.newRecurso.setObjectName("newRecurso")
