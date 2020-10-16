@@ -1,3 +1,4 @@
+import pathlib
 import pickle
 import os.path as path
 from typing import List
@@ -38,4 +39,10 @@ def cargar(nombre:str) -> Recurso:
 
 @dispatch()
 def cargar() -> List[Recurso]:
-    print("Chau")
+    path = pathlib.Path(r"resources\data\recursos")
+    mylist = []
+    for rec in path.iterdir():
+        with open(r"resources\data\recursos\\"+ rec.name, "rb") as f:
+            i = pickle.load(f)
+            mylist.append(i)
+    return mylist

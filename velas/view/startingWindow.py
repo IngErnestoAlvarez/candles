@@ -1,3 +1,5 @@
+from PyQt5.QtWidgets import QSpacerItem
+from velas.model.recurso.recurso import cargar
 from velas.view.recursoWidget import WidgetRecurso
 from PyQt5 import QtCore, QtGui, QtWidgets
 from velas.view.uis.uistartingWindow import *
@@ -12,12 +14,10 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
         self.setupUi(self)
 
 
-        #Testing######
-        self.primerRecurso = WidgetRecurso()
-        self.widget_recurso_inicio.layout().addWidget(self.primerRecurso)
+        for rec in cargar():
+            recursoAux = WidgetRecurso(rec)
+            self.widget_recurso_inicio.layout().addWidget(recursoAux)
         self.widget_recurso_inicio.layout().addStretch()
-
-        #############
 
         self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
