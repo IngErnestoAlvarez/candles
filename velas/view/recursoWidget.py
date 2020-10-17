@@ -1,3 +1,4 @@
+from velas.view.uis.dialogRecurso import Ui_Dialog
 from velas.model.recurso.recurso import Recurso
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtGui import QIcon, QPainter
@@ -34,6 +35,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.buttonAdd.setIcon(buttonAddIcon)
         self.buttonAdd.setMaximumSize(50,50)
         self.buttonAdd.setAccessibleName("botonBasura")
+        self.buttonAdd.clicked.connect(self.faddStock)
         self.layout.addWidget(self.buttonAdd)
     
     def paintEvent(self, a0: QtGui.QPaintEvent) -> None:
@@ -53,6 +55,12 @@ class WidgetRecurso(QtWidgets.QWidget):
 
         msg.exec_()
     
+    def faddStock(self):
+        self.w = QtWidgets.QDialog()
+        ui = Ui_Dialog()
+        ui.setupUi(self.w)
+        self.w.show()
+
     def eliminar(self, button):
         if button.text() == "Cancel": return
 
