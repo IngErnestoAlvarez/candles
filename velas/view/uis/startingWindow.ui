@@ -177,7 +177,7 @@
            </size>
           </property>
           <property name="text">
-           <string>Cantidad</string>
+           <string>Stock (g)</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
@@ -207,7 +207,6 @@
      <string>Recursos</string>
     </property>
     <addaction name="actionCrear_recurso"/>
-    <addaction name="actionEliminar_recurso"/>
     <addaction name="actionModificar_recurso"/>
    </widget>
    <widget class="QMenu" name="menuProductos">

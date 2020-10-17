@@ -28,6 +28,13 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.buttonDelete.clicked.connect(self.messageButton)
         self.layout.addWidget(self.buttonDelete)
 
+        # BOTON DE AGREGAR STOCK
+        self.buttonAdd = QtWidgets.QPushButton()
+        buttonAddIcon = QIcon(r"resources\imagenes\mas.png")
+        self.buttonAdd.setIcon(buttonAddIcon)
+        self.buttonAdd.setMaximumSize(50,50)
+        self.buttonAdd.setAccessibleName("botonBasura")
+        self.layout.addWidget(self.buttonAdd)
     
     def paintEvent(self, a0: QtGui.QPaintEvent) -> None:
         opt = QStyleOption()
