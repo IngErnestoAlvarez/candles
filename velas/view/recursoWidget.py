@@ -50,5 +50,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         if button.text() == "Cancel": return
 
         self.rec.eliminar()
-        self.parent().layout().removeWidget(self)
-        self.parent().layout().update()
+        layout = self.parent().layout()
+        layout.removeWidget(self)
+        layout.update()
+        self.setParent(None)
