@@ -57,9 +57,16 @@ class WidgetRecurso(QtWidgets.QWidget):
     
     def faddStock(self):
         self.w = QtWidgets.QDialog()
-        ui = Ui_Dialog()
-        ui.setupUi(self.w)
+        self.ui = Ui_Dialog()
+        self.ui.setupUi(self.w)
+        self.ui.pushButton.clicked.connect(self.fBotonAniadir)
         self.w.show()
+
+    def fBotonAniadir(self):
+        aniadido = float(self.ui.lineEdit.text())
+        self.rec.agregarStock(aniadido)
+        self.rec.guardar()
+        self.w.close()
 
     def eliminar(self, button):
         if button.text() == "Cancel": return
