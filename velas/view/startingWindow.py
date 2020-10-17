@@ -23,11 +23,16 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
 
     def logica(self):
         self.actionCrear_recurso.triggered.connect(self.factionNewRecurso)
+        self.actionInicio.triggered.connect(self.factionVolverInicio)
         self.button_newRecurso.clicked.connect(self.fnewRecurso)
+
 
     def factionNewRecurso(self):
         self.stackedWidget.setCurrentWidget(self.newRecurso)
         self.lineEdit_nombre_newRecurso.setFocus()
+    
+    def factionVolverInicio(self):
+        self.stackedWidget.setCurrentWidget(self.Inicial)
 
 
     def fnewRecurso(self):

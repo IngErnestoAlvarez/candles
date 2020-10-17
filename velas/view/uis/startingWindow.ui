@@ -206,10 +206,9 @@
     <property name="title">
      <string>Recursos</string>
     </property>
+    <addaction name="actionInicio"/>
     <addaction name="actionCrear_recurso"/>
     <addaction name="actionModificar_recurso"/>
-    <addaction name="separator"/>
-    <addaction name="actionInicio"/>
    </widget>
    <widget class="QMenu" name="menuProductos">
     <property name="title">
