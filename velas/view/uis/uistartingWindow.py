@@ -115,8 +115,12 @@ class Ui_StartingWindow(object):
         self.actionCrear_producto.setObjectName("actionCrear_producto")
         self.actionEliminar_producto = QtWidgets.QAction(StartingWindow)
         self.actionEliminar_producto.setObjectName("actionEliminar_producto")
+        self.actionInicio = QtWidgets.QAction(StartingWindow)
+        self.actionInicio.setObjectName("actionInicio")
         self.menuRecursos.addAction(self.actionCrear_recurso)
         self.menuRecursos.addAction(self.actionModificar_recurso)
+        self.menuRecursos.addSeparator()
+        self.menuRecursos.addAction(self.actionInicio)
         self.menuProductos.addAction(self.actionCrear_producto)
         self.menuProductos.addAction(self.actionEliminar_producto)
         self.menubar.addAction(self.menuRecursos.menuAction())
@@ -140,6 +144,7 @@ class Ui_StartingWindow(object):
         self.actionModificar_recurso.setText(_translate("StartingWindow", "Modificar recurso"))
         self.actionCrear_producto.setText(_translate("StartingWindow", "Crear producto"))
         self.actionEliminar_producto.setText(_translate("StartingWindow", "Eliminar producto"))
+        self.actionInicio.setText(_translate("StartingWindow", "Inicio"))
 
 
 if __name__ == "__main__":

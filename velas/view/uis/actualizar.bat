@@ -1,1 +1,0 @@
-pyuic5.exe -x velas\view\uis\startingWindow.ui -o velas\view\uis\uistartingWindow.py

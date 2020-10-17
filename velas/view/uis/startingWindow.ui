@@ -208,6 +208,8 @@
     </property>
     <addaction name="actionCrear_recurso"/>
     <addaction name="actionModificar_recurso"/>
+    <addaction name="separator"/>
+    <addaction name="actionInicio"/>
    </widget>
    <widget class="QMenu" name="menuProductos">
     <property name="title">
@@ -243,6 +245,11 @@
   <action name="actionEliminar_producto">
    <property name="text">
     <string>Eliminar producto</string>
+   </property>
+  </action>
+  <action name="actionInicio">
+   <property name="text">
+    <string>Inicio</string>
    </property>
   </action>
  </widget>
