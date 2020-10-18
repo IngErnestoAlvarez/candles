@@ -68,9 +68,14 @@ QPushButton[accessibleName="botonBasura"]{
   background-color: transparent;
 }
 
-QPushButton#botonEmergencia {
-  font: 10px;
+QMessageBox QPushButton{
+  font: 25px;
 }
+
+QToolTip{
+  border: 1px solid white;
+}
+
 #frame {
   padding: 6px;
   border-radius: 12px;
