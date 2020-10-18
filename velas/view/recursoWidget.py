@@ -2,7 +2,7 @@ from velas.view.uis.dialogRecurso import Ui_Dialog
 from velas.model.recurso.recurso import Recurso
 from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtGui import QIcon, QPainter
-from PyQt5.QtWidgets import QMessageBox, QStyle, QStyleOption, QWidget
+from PyQt5.QtWidgets import QBoxLayout, QMessageBox, QStyle, QStyleOption, QWidget
 
 class WidgetRecurso(QtWidgets.QWidget):
 
@@ -37,6 +37,10 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.buttonAdd.setAccessibleName("botonBasura")
         self.buttonAdd.clicked.connect(self.faddStock)
         self.layout.addWidget(self.buttonAdd)
+    
+    def cargarEnLayout(self, destino:QBoxLayout) -> None:
+        '''Se le pasa como parametro una QBoxLayout y te carga dentro de ella un WidgetRecurso'''
+        destino.addWidget(self)
     
     def paintEvent(self, a0: QtGui.QPaintEvent) -> None:
         opt = QStyleOption()

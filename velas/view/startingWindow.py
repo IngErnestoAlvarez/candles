@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QSpacerItem
+from PyQt5.QtWidgets import QBoxLayout
 from velas.model.recurso.recurso import Recurso, cargar
 from velas.view.recursoWidget import WidgetRecurso
 from PyQt5 import QtCore, QtGui, QtWidgets
@@ -14,11 +14,11 @@ class StartingWindow(QtWidgets.QMainWindow,  Ui_StartingWindow):
         self.setupUi(self)
 
         for rec in cargar():
-            recursoAux = WidgetRecurso(rec)
-            self.widget_recurso_inicio.layout().addWidget(recursoAux)
+            WidgetRecurso(rec).cargarEnLayout(self.widget_recurso_inicio.layout())
         self.widget_recurso_inicio.layout().setAlignment(QtCore.Qt.AlignTop)
 
         self.logica()
+
 
 
     def logica(self):
