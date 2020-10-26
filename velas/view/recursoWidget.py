@@ -12,21 +12,21 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.setUp()
 
         # NOMBRE
-        self.nombre = self.iniciarNombre(self.rec.nombre)
+        self.nombre = self.crearLabelParaNombre(self.rec.nombre)
         self.layout.addWidget(self.nombre)
 
         # PRECIO
-        self.precio = self.iniciarPrecio(self.rec.precio)
+        self.precio = self.crearLabelParaPrecio(self.rec.precio)
         self.layout.addWidget(self.precio)
 
         # BOTON DE ELIMINADO
-        self.buttonDelete = self.iniciarButtonDelete()
+        self.buttonDelete = self.crearBotonDelete()
         self.buttonDelete.clicked.connect(self.messageButtonDelete)
         self.layout.addWidget(self.buttonDelete)
 
         # BOTON DE AGREGAR STOCK
-        self.buttonAdd = self.iniciarButtonAdd()
-        self.buttonAdd.clicked.connect(self.faddStock)
+        self.buttonAdd = self.crearBotonAniadirStock()
+        self.buttonAdd.clicked.connect(self.fBotonAniadirStock)
         self.layout.addWidget(self.buttonAdd)
     
     def setUp(self):
@@ -36,7 +36,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         self.layout.setSpacing(10)
 
     @staticmethod
-    def iniciarNombre(nombre:str) -> QtWidgets.QLabel:
+    def crearLabelParaNombre(nombre:str) -> QtWidgets.QLabel:
         nombreAux = QtWidgets.QLabel()
         nombreAux.setText(nombre)
         nombreAux.setAccessibleName("widgetRecursoInicio")
@@ -45,7 +45,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         return nombreAux
     
     @staticmethod
-    def iniciarButtonDelete() -> QtWidgets.QPushButton:
+    def crearBotonDelete() -> QtWidgets.QPushButton:
         buttonDelete = QtWidgets.QPushButton()
         buttonIcon = QIcon(r"resources\imagenes\basura.png")
         buttonDelete.setIcon(buttonIcon)
@@ -55,7 +55,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         return buttonDelete
 
     @staticmethod
-    def iniciarButtonAdd() -> QtWidgets.QPushButton:
+    def crearBotonAniadirStock() -> QtWidgets.QPushButton:
         buttonAddAux = QtWidgets.QPushButton()
         buttonAddIcon = QIcon(r"resources\imagenes\mas.png")
         buttonAddAux.setIcon(buttonAddIcon)
@@ -65,7 +65,7 @@ class WidgetRecurso(QtWidgets.QWidget):
         return buttonAddAux
     
     @staticmethod
-    def iniciarPrecio(precio:float) -> QtWidgets.QLabel:
+    def crearLabelParaPrecio(precio:float) -> QtWidgets.QLabel:
         precioAux = QtWidgets.QLabel()
         precioAux.setText("$"+str(precio))
         precioAux.setAccessibleName("widgetRecursoInicio")
@@ -97,14 +97,14 @@ class WidgetRecurso(QtWidgets.QWidget):
 
         msg.exec_()
     
-    def faddStock(self):
+    def fBotonAniadirStock(self):
         self.w = QtWidgets.QDialog()
         self.ui = Ui_Dialog()
         self.ui.setupUi(self.w)
-        self.ui.pushButton.clicked.connect(self.fBotonAniadir)
+        self.ui.pushButton.clicked.connect(self.aniadirStock)
         self.w.show()
 
-    def fBotonAniadir(self):
+    def aniadirStock(self):
         aniadido = float(self.ui.lineEdit.text())
         self.rec.agregarStock(aniadido)
         self.rec.guardar()

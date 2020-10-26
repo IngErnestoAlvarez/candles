@@ -32,12 +32,12 @@ class Recurso(object):
         pathlib.Path(r"resources\data\recursos\\"+self.nombre.lower()+".dat").unlink(missing_ok=True)
 
 @dispatch(str)
-def cargar(nombre:str) -> Recurso:
+def cargarRecursoAlSistema(nombre:str) -> Recurso:
     print("Hola")
     return Recurso("Hola", 10, 10)
 
 @dispatch()
-def cargar() -> List[Recurso]:
+def cargarRecursoAlSistema() -> List[Recurso]:
     path = pathlib.Path(r"resources\data\recursos")
     mylist = []
     for rec in path.iterdir():
